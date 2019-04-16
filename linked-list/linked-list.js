@@ -35,20 +35,23 @@ function LinkedList() {
   }
 
   function toString() {
-    let string = '(';
-    //Si la lista esta vacia
-    if (!head.next) {
-      string = 'Lista vacía';
-    } else {
-      let ref = head;
-      while (ref) {
-        string = `${string + ref.value},`;
-        ref = ref.next;
-      }
-      //string = string.slice(0, string.length - 1);
-      string = string.slice(0, -1).concat(')');
-    }
-    return string;
+    let strig = "";
+    let valorUno = head.value;
+    let valorDos = head.next.value;
+    let valorTres = head.next.next.value;
+    let valorCuatro = tail.value;
+    strig =
+      "(" +
+      valorUno +
+      "," +
+      valorDos +
+      "," +
+      valorTres +
+      "," +
+      valorCuatro +
+      ")";
+
+    return strig;
   }
   /**
    * Since I cannot write 'head =' or 'tail =' (that is changing the reference)
