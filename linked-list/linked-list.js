@@ -40,28 +40,27 @@ function LinkedList() {
     while (nodo.next !== null) {
       string += nodo.value;
       nodo = nodo.next;
-      string = string + ",";
+      string = string + ")";
     }
     string = string + tail.value + ")";
-
     return string;
   }
-  /**
-   * Since I cannot write 'head =' or 'tail =' (that is changing the reference)
-   * I need to mutate head values or tail values,
-   * so that values are updated but the reference still remains
-   */
-
-  return {
-    head, // This is the unique reference that
-    // the user of LinkedList() has so it cannot change,
-    // we just need to update the inner values!
-    tail,
-    append,
-    add: append,
-    toString
-  };
 }
+/**
+ * Since I cannot write 'head =' or 'tail =' (that is changing the reference)
+ * I need to mutate head values or tail values,
+ * so that values are updated but the reference still remains
+ */
+
+return {
+  head, // This is the unique reference that
+  // the user of LinkedList() has so it cannot change,
+  // we just need to update the inner values!
+  tail,
+  append,
+  add: append,
+  toString
+};
 
 function ListItemLinkedList(value) {
   // value: !null, next: ListItemLinkedList
