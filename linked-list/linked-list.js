@@ -35,23 +35,16 @@ function LinkedList() {
   }
 
   function toString() {
-    let strig = "";
-    let valorUno = head.value;
-    let valorDos = head.next.value;
-    let valorTres = head.next.next.value;
-    let valorCuatro = tail.value;
-    strig =
-      "(" +
-      valorUno +
-      "," +
-      valorDos +
-      "," +
-      valorTres +
-      "," +
-      valorCuatro +
-      ")";
+    let string = "(";
+    let nodo = head;
+    while (nodo.next !== null) {
+      string += nodo.value;
+      nodo = nodo.next;
+      string = string + ",";
+    }
+    string = string + tail.value + ")";
 
-    return strig;
+    return string;
   }
   /**
    * Since I cannot write 'head =' or 'tail =' (that is changing the reference)

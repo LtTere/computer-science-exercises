@@ -1,7 +1,7 @@
-const LinkedList = require('./linked-list');
+const LinkedList = require("./linked-list");
 
-describe('LinkedList', () => {
-  it('should append node to linked list', () => {
+describe("LinkedList", () => {
+  it("should append node to linked list", () => {
     const linkedList = LinkedList();
 
     //expect(linkedList.head).toEqual({ next: linkedList.tail, value: null });
@@ -25,13 +25,22 @@ describe('LinkedList', () => {
     expect(linkedList.tail.next).toBeNull();
   });
 
-  it('should have a toString method that prints all the values', () => {
+  it("should have a toString method that prints all the values", () => {
     const linkedList = LinkedList();
     linkedList.append(1);
     linkedList.append(1);
     linkedList.append(12);
     linkedList.append(99);
 
-    expect(linkedList.toString()).toBe('(1,1,12,99)');
+    expect(linkedList.toString()).toBe("(1,1,12,99)");
+  });
+
+  it("should have a toString method that prints all the values", () => {
+    const linkedList = LinkedList();
+    linkedList.append(1);
+    linkedList.append(24);
+    linkedList.append("hola");
+
+    expect(linkedList.toString()).toBe("(1,24,hola)");
   });
 });
